@@ -11,7 +11,6 @@ IP = ([l for l in ([ip for ip in socket.gethostbyname_ex(socket.gethostname())[2
 NM = nmap.PortScanner()
 DBLIST = ['DB/nvdcve-2.0-2002.xml','DB/nvdcve-2.0-2003.xml','DB/nvdcve-2.0-2004.xml','DB/nvdcve-2.0-2005.xml','DB/nvdcve-2.0-2007.xml','DB/nvdcve-2.0-2008.xml','DB/nvdcve-2.0-2009.xml','DB/nvdcve-2.0-2010.xml','DB/nvdcve-2.0-2011.xml','DB/nvdcve-2.0-2012.xml','DB/nvdcve-2.0-2013.xml','DB/nvdcve-2.0-2014.xml','DB/nvdcve-2.0-2015.xml']
 
-
 host = []
 protocol = []
 port = []
@@ -122,13 +121,11 @@ def referenceDB(cpe):
 
 
 
-
-
-
+#time to start doing things!
 print "\nNetwork Interface: " + IFACE
 print "IP Address: " + IP
 
-#Fist things first, we have the IP, but we need to now get the subnet mask that it lies on
+#F=fist things first, we have the IP, but we need to now get the subnet mask that it lies on
 subnet_mask = get_netmask_num(get_netmask(IFACE))
 print "Subnet Mask: " + str(subnet_mask) + "\n"
 
@@ -169,37 +166,4 @@ for ip in uniqueIPs: #go through all the unique IPs
 				print ""
 		i+=1
 	print ""
-
-
-
-
-
-
-
-
-
-
-'''
-i=0
-for item in host:
-	print "Hosts: " + host[i]
-	print "Protocols: " + protocol[i]
-	print "Ports: " + port[i]
-	print "Names: " + name[i]
-	print "States: " + state[i]
-	print "Products: " + product[i]
-	print "ExtraInfo: " + extrainfo[i]
-	print "Reasons: " + reason[i]
-	print "Versions: " + version[i]
-	print "Confs: " + conf[i]
-	print "Cpes: " + cpe[i]
-	print "\n\n"
-	i+=1
-'''
-
-
-
-
-
-
 
