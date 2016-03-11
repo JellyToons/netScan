@@ -1,11 +1,39 @@
-# netScan
+netScan
+-------
 
+# Prerequisites
+  * MonogDB is installed
 
-You'll need four things for this application to work:
+# Installation
 
-1. Python-nmap which is a great tool to run nmap scans via python (which is obvious from the name). Found at: http://xael.org/pages/python-nmap-en.html
-2. An NVD database that can be downloaded at: https://nvd.nist.gov/download.cfm and place them in a directory called: 'DB'. Unfortunately, these file names are hard-coded. This will eventually be changed and the README will be updated to reflect it
-3. Python 2.7.*
-4. A Linux platform. As the code is now, it only works on a Linux platform. This is because of the difference in finding subnet masks between Linux and other platforms
+* git clone https://https://github.com/bhealy/netScan.git
+* pip install .
 
-To run the application, run scan.py (ex: python scan.py). It can take awhile, so let it do its thing. And that's it!
+# Configuration
+* In user's directory, create directory by name `.netScan`
+* Create a file inside this directory and name it as `netScan.conf`
+* Write your mongo URL here! As simple as that!
+
+### Instance:
+$: cat /home/bhealy/.netScan/netScan.conf
+`mongo_url mongodb://localhost:27017/`
+
+netScan
+=======
+
+## About
+* netScan scans
+* portScan to CPE match
+* And what? Brain will map CPE to CVE and CWE.
+
+## Database update with CPEs
+  * run `python nvdcpes.py`
+  * ensure mongod is running before running
+  * Future iterations will include this changes from CLI instead of python script
+
+# CONTRIBUTING
+
+* I hold the copyright
+* Contributors get the copyright too
+* This project will soon have some sort of a OSS License.
+* As long as it is free (OR) you can buy the author(s) beer if you get to meet them (BEERWARE LICENSE IT IS).
